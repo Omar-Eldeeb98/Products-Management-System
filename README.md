@@ -18,7 +18,7 @@
 https://omar-eldeeb98.github.io/Products-Management-System/
 
 # ScreenShots :
-<img src = "screenshots/laptop.gif" alt = "laptop" width = "400" height = "200"> ,<img src = "screenshots/mobile.gif" alt = "laptop" width = "150" height = "350">
+<img src = "screenshots/laptop.gif" alt = "laptop" width = "400" height = "200"> ,<img src = "screenshots/mobile.gif" alt = "laptop" width = "170" height = "350">
 
 
 # Tools & Technologies :
