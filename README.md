@@ -16,7 +16,7 @@
 
 
 # Screenshots :
-
+<img src="screenshots/laptop.gif" alt="laptop" width="600" height="300">
 
 # Tools & Technologies :
 - html , css , bootstrap , responsive ,  javascript , local storege , crud-s operations
