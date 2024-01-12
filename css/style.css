@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.project_title {
+    font-family: 'Bungee Spice', sans-serif;
+}
+
+.project_title h2 {
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+#products_management {
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background-image: url("../images/bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+#products_management .container {
+
+    min-height: 100vh;
+
+}
+
+#products_management .container .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px !important;
+}
+
+#products_management .container .row label {
+    margin-block: 10px !important;
+    padding: 4px 8px;
+    background-color: #323544;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
+
+#products_management .container .row label select option {
+    color: black;
+}
+
+input:focus {
+    font-weight: bold;
+    border: 2px solid orangered !important;
+}
+
+#count_category_span {
+    background-color: #323544 !important;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: orange;
+    font-weight: bold;
+
+}
+
+
+.table_container {
+    /* height: 400px; */
+    overflow: auto;
+    padding: 8px;
+
+}
+
+#search_input {
+    background-color: #2F245C !important;
+    border: none;
+}
+#search_input::placeholder {
+    color: rgba(255, 255, 255, 0.529);
+}
+#search_input:focus {
+    box-shadow: none;
+    border: none !important;
+    outline: 2px solid orangered;
+    color: white;
+}
+
+.Dev_logo {
+    width: fit-content;
+    position: fixed;
+    background-color:rgba(0, 0, 0, 0.656);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 4px 6px;
+    font-family: 'Raleway', sans-serif;
+    top: 98%;
+    left: 5px;
+    transition: all 0.5s;
+}
+.Dev_logo:hover {
+    top: 90%;
+}
+.Dev_logo p {
+   margin-top:8px ;
+}
+.Dev_logo p.devName {
+    background-color: var(--bs-gray-900);
+    padding: 4px;
+    border-radius: 6px;
+    margin-left: 3px;
+    font-family: 'Bungee Spice', sans-serif;
+    
+}
+
+/*& ======================================== media Query ==================================================*/
+
+@media (max-width: 575.98px) {
+    .project_title {
+        font-family: 'Bungee Spice', sans-serif;
+    }
+
+    .project_title h2 {
+        letter-spacing: 2px;
+        font-size: 28px;
+    }
+
+    #search_input {
+        width: 100% !important;
+    }
+
+}
+
+
+/*& ======================================== media Query ==================================================*/

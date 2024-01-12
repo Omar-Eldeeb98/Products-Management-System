@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Managment</title>
+
+    <!-- sweet alert theme  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+    <!-- website logo  -->
+    <link rel="shortcut icon" href="./images/logo0.png" type="image/x-icon" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <!-- data table -->
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="Dev_logo">
+      <p>Designed & Developbed By :</p>   
+      <p class="devName">O.E.5.7</p>
+    </div>
+    <section id="products_management">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              class="project_title text-white bg-black rounded text-center text-uppercase p-3 d-flex justify-content-center align-items-center">
+              <h2 class="pt-3">Products Management System</h2>
+              <img
+                src="./images/logo0.png"
+                alt=""
+                width="70px"
+                height="70px"
+                class="ms-3" />
+            </div>
+          </div>
+
+          <div class="col md-12">
+            <div class="categories bg-black rounded p-3 mt-2">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="categories_container">
+                    <label id="category_label" class="text-white mb-2"
+                      >Categories: *</label
+                    >
+                    <select
+                      name=""
+                      id="category_dropdown"
+                      class="form-control fw-bold"></select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div>
+                    <label id="category_name_label" class="text-white mb-2"
+                      >Create Category: *</label
+                    >
+                    <div class="input-group">
+                      <input
+                        id="category_name_input"
+                        type="text"
+                        class="form-control rounded-3"
+                        placeholder="Enter Category " />
+                      <div class="form-group-append">
+                        <button
+                          onclick="createCategory()"
+                          id="save_category_btn"
+                          class="btn btn-success rounded-circle ms-2">
+                          <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <button
+                          onclick="showModalCategories()"
+                          id="show_categories_btn"
+                          class="btn btn-primary ms-3 rounded-2"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalId">
+                          <i class="fa-solid fa-eye"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="product bg-black rounded p-3 mt-2">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="container_">
+                    <label id="product_name_label" class="text-white mb-2"
+                      >Product Name : *</label
+                    >
+                    <input
+                      id="product_name_input"
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Product Name:" />
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="container_">
+                    <label id="product_quantity_label" class="text-white mb-2"
+                      >Quantity: *</label
+                    >
+                    <input
+                      onchange="getTatal()"
+                      onkeyup="getTatal()"
+                      id="product_quantity_input"
+                      type="number"
+                      value="0"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="container_">
+                    <label id="product_price_label" class="text-white mb-2"
+                      >Price: *</label
+                    >
+                    <input
+                      onchange="getTatal()"
+                      onkeyup="getTatal()"
+                      id="product_price_input"
+                      type="number"
+                      value="0"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="container_">
+                    <label id="product_descount_label" class="text-white mb-2"
+                      >Descount:</label
+                    >
+                    <input
+                      onchange="getTatal()"
+                      onkeyup="getTatal()"
+                      id="product_descount_input"
+                      type="number"
+                      value="0"
+                      class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="container_">
+                    <label id="product_total_label" class="text-white mb-2"
+                      >Total:</label
+                    >
+                    <input
+                      id="product_total_input"
+                      type="number"
+                      value="0"
+                      class="form-control text-center bg-danger border-0 text-white fw-bold p-2"
+                      disabled />
+                  </div>
+                </div>
+                <div class="col-md-6 mt-4">
+                  <button
+                    onclick="createProduct()"
+                    id="save_product_btn"
+                    class="btn btn-outline-success w-100 p-3">
+                    <i class="fa-solid fa-download me-3"></i> Add Product
+                  </button>
+                  <button
+                    onclick="updateProduct()"
+                    id="update_product_btn"
+                    class="btn btn-outline-warning w-100 p-3 d-none">
+                    <i class="fa-solid fa-pen-to-square me-3"></i> Edit Product
+                  </button>
+                </div>
+                <div class="col-md-6 mt-4">
+                  <div class="row gy-3">
+                    <div class="col-md-6">
+                      <button
+                        onclick="deleteAllProducts()"
+                        id="delete_all_products"
+                        class="btn btn-outline-danger w-100 p-3">
+                        <i class="fa-solid fa-trash-can me-3"></i> Delete All
+                        Products
+                      </button>
+                    </div>
+                    <div class="col-md-6">
+                      <button
+                        onclick="refreshPage()"
+                        id="delete_all_products"
+                        class="btn btn-outline-info w-100 p-3">
+                        <i class="fa-solid fa-broom me-3"></i> Re-Fresh
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="bg-black rounded p-3 mt-2 overflow-auto">
+              <input
+                id="search_input"
+                type="text"
+                class="form-control w-75 mx-auto mb-2 mt-2 p-2"
+                placeholder="Search By Product Name Or Category  🔎 " />
+              <div id="table_container" class="table_container">
+                <table
+                  id="tableProducts"
+                  class="text-center table table-bordered table-hover table-responsive table-dark mb-3">
+                  <thead class="table-active">
+                    <tr>
+                      <th>#</th>
+                      <th>Category</th>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Descount</th>
+                      <th>Total</th>
+                      <th>Update</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="products_table_body">
+                    <!-- <tr>
+                    <td>1</td>
+                    <td>Mobile</td>
+                    <td>Iphone</td>
+                    <td>5</td>
+                    <td>5000</td>
+                    <td>500</td>
+                    <td>4500</td>
+                    <td>
+                      <button class="btn btn-outline-warning">
+                        <i class="fa-solid fa-pen-to-square me-2"></i> Update
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn btn-outline-danger">
+                        <i class="fa-solid fa-trash me-2"></i>Delete
+                      </button>
+                    </td> -->
+                    <!-- </tr> -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modalId"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalTitleId"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content bg-dark text-white" style="height: 400px">
+          <div class="modal-header text-white">
+            <h5 class="modal-title text-uppercase" id="modalTitleId">
+              categories :
+              <span id="count_category_span" class="text-lowercase p-2"></span>
+            </h5>
+            <button
+              type="button"
+              class="btn-close bg-danger"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body overflow-auto">
+            <table
+              id="table_of_products "
+              class="text-center table table-bordered table-hover table-dark w-100">
+              <thead class="table-active">
+                <tr>
+                  <th>#</th>
+                  <th>Category Name</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+
+              <tbody id="categoryies_table_body"></tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sweet Alert  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- bootstrap -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- main js file -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
