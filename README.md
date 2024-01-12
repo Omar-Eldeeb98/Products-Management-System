@@ -1,6 +1,6 @@
 # Products Management System :
 * products management system based on browser local storage , CRUD-S operations
-* you can :
+## you can :
 - create category
 - delete categoty
 - display categories
